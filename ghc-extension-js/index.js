@@ -34,25 +34,25 @@ app.post("/copilot", express.json(), async (req, res) => {
   const payload = req.body;
   const messages = payload.messages;
 
-  // Add the agent job description to copilot's messages
-  // const jobDescription = await fs.readFile(
-  //   path.join(__dirname, "agent-knowledge", "job-description.md"),
-  //   "utf8"
-  // );
-  // messages.unshift({
-  //   role: "system",
-  //   content: jobDescription,
-  // });
+  Add the agent job description to copilot's messages
+  const jobDescription = await fs.readFile(
+    path.join(__dirname, "agent-knowledge", "job-description.md"),
+    "utf8"
+  );
+  messages.unshift({
+    role: "system",
+    content: jobDescription,
+  });
 
-  // Add the school overview to copilot's messages
-  // const schoolOverview = await fs.readFile(
-  //   path.join(__dirname, "agent-knowledge", "school-overview.md"),
-  //   "utf8"
-  // );
-  // messages.unshift({
-  //   role: "system",
-  //   content: schoolOverview,
-  // });
+  Add the school overview to copilot's messages
+  const schoolOverview = await fs.readFile(
+    path.join(__dirname, "agent-knowledge", "school-overview.md"),
+    "utf8"
+  );
+  messages.unshift({
+    role: "system",
+    content: schoolOverview,
+  });
 
   // Add the staff descriptions to copilot's messages
   // const staffDescriptions = await fs.readFile(
